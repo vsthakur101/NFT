@@ -134,7 +134,7 @@ export const TransactionProvider = ({ children }) => {
         window.open("https://metamask.io/download.html", "_blank");
       }
       const { addressTo, amount, keyword, message } = formData;
-      const transactionContract = getEthereumContract();
+      const transactionContract = createEthereumContract();
       const parsedAmount = ethers.utils.parseEther(amount);
       await ethereum.request({
         method: "eth_sendTransaction",
